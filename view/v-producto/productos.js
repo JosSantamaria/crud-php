@@ -68,7 +68,36 @@ function editar(IDMATERIAL){
 
 //eliminar
 function eliminar(IDMATERIAL){
-    console.log(IDMATERIAL);
+    //console.log(IDMATERIAL);
+
+    swal.fire({
+                //Estructura de Alerta
+                title: '¿Estas Seguro?',
+                text: "No podras deshacer esta accion.",
+                icon: 'error', //icono
+                showCancelButton: true,
+                confirmButtonText: 'Si, eliminar',
+                cancelButtonText: 'No!, cancelar',
+                reverseButtons: true
+              }).then((result) => {
+                if (result.isConfirmed) {
+                //llamar controlador por $.post .
+                    $.post("../../controller/ctrl_productos.php?op=eliminar",
+                    {IDMATERIAL:IDMATERIAL},
+                    function (data){
+                    });
+
+                    $("#datos_productos").DataTable().ajax.reload();
+
+                  swal.fire(
+                    'Eliminado!',
+                    'Se ha eliminado correctamente este registro.',
+                    'success' //icono
+                  )
+                } 
+                  
+                
+              })
 }
 
 $(document).on("click","#btn_nuevo",function(){
