@@ -32,7 +32,7 @@
                         </div>
 
                     </form>
-                    <?php var_dump($_POST)?>;
+                    <?php //var_dump($_POST)?>;
         </div>
 
     </div>

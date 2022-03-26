@@ -5,29 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Twitter -->
-    <meta name="twitter:site" content="@themepixels">
-    <meta name="twitter:creator" content="@themepixels">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bracket">
-    <meta name="twitter:description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="twitter:image" content="http://themepixels.me/bracket/img/bracket-social.png">
-
-    <!-- Facebook -->
-    <meta property="og:url" content="http://themepixels.me/bracket">
-    <meta property="og:title" content="Bracket">
-    <meta property="og:description" content="Premium Quality and Responsive UI for Dashboard.">
-
-    <meta property="og:image" content="http://themepixels.me/bracket/img/bracket-social.png">
-    <meta property="og:image:secure_url" content="http://themepixels.me/bracket/img/bracket-social.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="600">
-
-    <!-- Meta -->
-    <meta name="description" content="Premium Quality and Responsive UI for Dashboard.">
-    <meta name="author" content="ThemePixels">
-
     <title>Vista | Cliente</title>
 
     <!-- vendor css -->
@@ -39,6 +16,10 @@
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="../../public/css/bracket.css">
   </head>
+  <!-- DataTable CSS -->
+    <link rel="stylesheet" href="../../public/datatables/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../../public/datatables/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="../../public/datatables/responsive.dataTables.min.css">
 
   <body>
 
@@ -153,22 +134,52 @@
 
       <div class="br-pagebody">
 
-        <!-- start you own content here -->
+        <!--TODO: Tabla de productos -->
+        <div class="br-section-wrapper">
+          <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Listado de Clientes</h6>
+
+          <p class="mg-b-25 mg-lg-b-50"></p>
+
+          <div class="row">
+    
+            <div class="col-md-3 col-sm-6">
+            <button id="btn_nuevo_cliente" class="btn btn-outline-primary btn-block mg-b-5">Nuevo Cliente</button>
+            </div>  
+
+          </div>
+          
+          <br><hr><br>
+          <div class="table-wrapper">
+            <table id="datos_clientes" class="table display responsive nowrap">
+              <thead>
+                <tr>
+                  <th class="wd-15p">Id Cliente</th>
+                  <th class="wd-20p">Razon Social</th>
+                  <th class="wd-15p">RFC</th>
+                  <th class="wd-15p"></th>
+                  <th class="wd-15p"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
 
       </div><!-- br-pagebody -->
 
     </div><!-- br-mainpanel -->
+    <?php  /*Modal*/ require_once('./modal_cliente.php'); ?>
     <!-- ########## END: MAIN PANEL ########## -->
 
-    <script src="../../public/lib/jquery/jquery.js"></script>
-    <script src="../../public/lib/popper.js/popper.js"></script>
-    <script src="../../public/lib/bootstrap/bootstrap.js"></script>
-    <script src="../../public/lib/perfect-scrollbar/js/perfect-scrollbar.jquery.js"></script>
-    <script src="../../public/lib/moment/moment.js"></script>
-    <script src="../../public/lib/jquery-ui/jquery-ui.js"></script>
-    <script src="../../public/lib/jquery-switchbutton/jquery.switchButton.js"></script>
-    <script src="../../public/lib/peity/jquery.peity.js"></script>
-
-    <script src="../../public/js/bracket.js"></script>
+    <?php  /*Modal*/ require_once('../v-cliente/main-js.php'); ?>
+  
+  
+  <script src="./clientes.js"></script>
   </body>
 </html>
