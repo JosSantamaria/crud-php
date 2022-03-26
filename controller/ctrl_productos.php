@@ -44,7 +44,7 @@
 
                 break;
 
-        case "guardareditar":
+        case "guardaryeditar":
             //Obtener id
             $datos = $producto->get_producto_x_id($_POST["IDMATERIAL"]);
             
@@ -52,13 +52,14 @@
             if( empty( $_POST["IDMATERIAL"] ) )
             {
                 //datos es arreglo? = true && el conteo es 0
-                if (is_array($datos) == true && count($datos) == 0 ) 
-                {   
-                    //inserta de producto
+                if (is_array($datos) == true and count($datos) == 0 ) 
+                {   //inserta de producto(nuevo)
+                    
                     $producto->insert_producto($_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);
                 }
                 else{
-                    $producto->insert_producto($_POST["IDMATERIAL"],$_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);    
+                    //inserta de producto (update)
+                    $producto->update_producto($_POST["IDMATERIAL"],$_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);    
                 }
             }
                 break;
