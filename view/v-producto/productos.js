@@ -96,6 +96,29 @@ function guardaryeditar(e){
 //editar
 function editar(IDMATERIAL){
     console.log(IDMATERIAL);
+    //renombre modal
+    $("#modal_titulo").html('Editar Registro');
+
+    //consulta de datos.
+    $.post("../../controller/ctrl_productos.php?op=mostrar",{IDMATERIAL:IDMATERIAL},function(data){
+        //convertir data a JSON con JS.
+        data = JSON.parse(data);
+        //
+        // console.log(data);
+        
+        //set datos
+        $('#IDMATERIAL').val(data.IDMATERIAL);
+        $('#DESCRIPCION').val(data.DESCRIPCION);
+        $('#UNIDADMEDIDA').val(data.UNIDADMEDIDA);
+        $('#PRECIO1').val(data.PRECIO1);
+        
+
+
+    });
+
+
+    //mostrar
+    $("#modal_producto").modal('show');
 }
 
 //eliminar
@@ -133,8 +156,11 @@ function eliminar(IDMATERIAL){
 }
 
 $(document).on("click","#btn_nuevo",function(){
-    $("#modal_titulo").html("Registrar Producto")
-    $("#modal_producto").modal('show')
+    
+    $("#modal_titulo").html("Registrar Producto");
+    //reset fomulario
+    $('#form_producto')[0].reset();
+    $("#modal_producto").modal('show');
 })
 
 init();

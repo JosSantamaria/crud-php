@@ -52,15 +52,14 @@
             if( empty( $_POST["IDMATERIAL"] ) )
             {
                 //datos es arreglo? = true && el conteo es 0
-                if (is_array($datos) == true and count($datos) == 0 ) 
+                if (is_array($datos) == true and count($datos) == 0  ) 
                 {   //inserta de producto(nuevo)
-                    
                     $producto->insert_producto($_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);
                 }
-                else{
-                    //inserta de producto (update)
-                    $producto->update_producto($_POST["IDMATERIAL"],$_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);    
-                }
+            }
+            else {
+                //inserta de producto (update)
+                $producto->update_producto($_POST["IDMATERIAL"],$_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);    
             }
                 break;
 
@@ -68,7 +67,7 @@
             //obtener por id
             $datos = $producto->get_producto_x_id($_POST["IDMATERIAL"]);
 
-            if (is_array($datos) == true && count($datos) == 0 ) 
+            if (is_array($datos) == true && count($datos) > 0 ) 
                 {
                     //recorrer arreglo
                     foreach ($datos as $dato) {
@@ -77,6 +76,7 @@
                         $salida["UNIDADMEDIDA"] = $dato["UNIDADMEDIDA"];
                         $salida["PRECIO1"] = $dato["PRECIO1"];
                     }
+                    echo json_encode($salida);
                 }
 
         break;

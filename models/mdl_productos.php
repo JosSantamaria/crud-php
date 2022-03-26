@@ -50,6 +50,7 @@
         public function update_producto($IDMATERIAL,$DESCRIPCION,$UNIDADMEDIDA,$PRECIO1){
             $conectar = parent::Conexion();
             parent::set_names();
+            
 
             $sql = "UPDATE t_productos SET DESCRIPCION=?, UNIDADMEDIDA=?, PRECIO1=? WHERE IDMATERIAL = ? ";
             $sql = $conectar->prepare($sql); 
