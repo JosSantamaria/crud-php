@@ -1,8 +1,8 @@
 <?php
-    require_once('../config/conexion.php'); //clase conexion
-    require_once('../models/mdl_productos.php'); //modelo
+    require_once('../config/conexion.php'); //TODO: clase conexion
+    require_once('../models/mdl_productos.php'); //TODO: modelo
     
-    $producto = new Producto(); //nuevo objeto producto
+    $producto = new Producto(); //TODO: nuevo objeto producto
 
     switch($_GET["op"]){
 
@@ -12,21 +12,21 @@
 
                 $data = Array();
 
-                //recorrer datos
+                //TODO: recorrer datos
                     foreach($datos as $dato){
-                        $sub_array = array(); //inicio sub arreglo
-                        //ID
+                        $sub_array = array(); //TODO: inicio sub arreglo
+                        //TODO: ID
                         $sub_array[] = $dato["IDMATERIAL"];
-                        //DESCRIPCION
+                        //TODO: DESCRIPCION
                         $sub_array[] = $dato["DESCRIPCION"];
-                        //UNIDADMEDIDA
+                        //TODO: UNIDADMEDIDA
                         $sub_array[] = $dato["UNIDADMEDIDA"];
-                        //PRECIO
+                        //TODO: PRECIO
                         $sub_array[] = $dato["PRECIO1"];
 
-                        //accion update
+                        //TODO: accion update
                         $sub_array[] = '<button type="button" onClick="editar('.$dato["IDMATERIAL"].');"  id="'.$dato["IDMATERIAL"].'" class="btn btn-outline-primary btn-icon"><div><i class="fa fa-edit"></i></div></button>';
-                        //accion delete
+                        //TODO: accion delete
                         $sub_array[] = '<button type="button" onClick="eliminar('.$dato["IDMATERIAL"].');"  id="'.$dato["IDMATERIAL"].'" class="btn btn-outline-danger btn-icon"><div><i class="fa fa-trash"></i></div></button>';
 
                         $data[] = $sub_array;
@@ -39,37 +39,37 @@
                     "aaData" => $data
                 );
                 
-                //convertir $resultados a JSON para el datatable.
+                //TODO: convertir $resultados a JSON para el datatable.
                 echo json_encode($resultados);
 
                 break;
 
         case "guardaryeditar":
-            //Obtener id
+            //TODO: Obtener id
             $datos = $producto->get_producto_x_id($_POST["IDMATERIAL"]);
             
-            //insertar producto
+            //TODO: insertar producto
             if( empty( $_POST["IDMATERIAL"] ) )
             {
-                //datos es arreglo? = true && el conteo es 0
+                //TODO: datos es arreglo? = true && el conteo es 0
                 if (is_array($datos) == true and count($datos) == 0  ) 
-                {   //inserta de producto(nuevo)
+                {   //TODO: inserta de producto(nuevo)
                     $producto->insert_producto($_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);
                 }
             }
             else {
-                //inserta de producto (update)
+                //TODO: inserta de producto (update)
                 $producto->update_producto($_POST["IDMATERIAL"],$_POST["DESCRIPCION"],$_POST["UNIDADMEDIDA"],$_POST["PRECIO1"]);    
             }
                 break;
 
         case "mostrar";
-            //obtener por id
+            //TODO: obtener por id
             $datos = $producto->get_producto_x_id($_POST["IDMATERIAL"]);
 
             if (is_array($datos) == true && count($datos) > 0 ) 
                 {
-                    //recorrer arreglo
+                    //TODO: recorrer arreglo
                     foreach ($datos as $dato) {
                         $salida["IDMATERIAL"] = $dato["IDMATERIAL"];
                         $salida["DESCRIPCION"] = $dato["DESCRIPCION"];
@@ -83,7 +83,7 @@
     
 
         case 'eliminar':
-            //eliminar por id - viene desde el js a travez de post
+            //TODO: eliminar por id - viene desde el js a travez de post
             $producto->delete_producto_x_id($_POST["IDMATERIAL"]);
             break;
         }

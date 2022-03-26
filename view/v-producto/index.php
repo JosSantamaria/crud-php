@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -99,7 +99,6 @@
       <!-- Tab panes -->
       
     </div><!-- br-sideright -->
-    <!-- ########## END: RIGHT PANEL ########## --->
 
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
@@ -115,7 +114,7 @@
       </div>
 
       <div class="br-pagebody">
-        <!-- Tabla de productos -->
+        <!--TODO: Tabla de productos -->
         <div class="br-section-wrapper">
           <h6 class="tx-gray-800 tx-uppercase tx-bold tx-14 mg-b-10">Listado de Productos</h6>
 

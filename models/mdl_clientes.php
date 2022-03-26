@@ -15,9 +15,9 @@
             $conectar = parent::Conexion();
             parent::set_names();
 
-            $sql = "SELECT * FROM t_clientes WHERE IDCLIENTE = ? ";//Seleccion segun id. -bindValue: buscar parametro
-            $sql = $conectar->prepare($sql); //conectar y preparar query para ejecucion.
-            $sql->bindValue(1,$IDCLIENTE); // numeros de parametros a buscar (1),valor($IDCLIENTE)
+            $sql = "SELECT * FROM t_clientes WHERE IDCLIENTE = ? ";//TODO: Seleccion segun id. -bindValue: buscar parametro
+            $sql = $conectar->prepare($sql); //TODO: conectar y preparar query para ejecucion.
+            $sql->bindValue(1,$IDCLIENTE); //TODO:  numeros de parametros a buscar (1),valor($IDCLIENTE)
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

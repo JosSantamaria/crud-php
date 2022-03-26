@@ -5,8 +5,8 @@
             $conectar = parent::Conexion();
             parent::set_names();
 
-            $sql = "SELECT * FROM t_productos";//Seleccionar productos.
-            $sql = $conectar->prepare($sql); //conectar y preparar query para ejecucion.
+            $sql = "SELECT * FROM t_productos";//TODO: Seleccionar productos.
+            $sql = $conectar->prepare($sql); //TODO: conectar y preparar query para ejecucion.
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }
@@ -15,9 +15,9 @@
             $conectar = parent::Conexion();
             parent::set_names();
 
-            $sql = "SELECT * FROM t_productos WHERE IDMATERIAL = ? ";//Seleccion segun id. -bindValue: buscar parametro
-            $sql = $conectar->prepare($sql); //conectar y preparar query para ejecucion.
-            $sql->bindValue(1,$IDMATERIAL); // numeros de parametros a buscar (1),valor($IDMATERIAL)
+            $sql = "SELECT * FROM t_productos WHERE IDMATERIAL = ? ";//TODO: Seleccion segun id. -bindValue: buscar parametro
+            $sql = $conectar->prepare($sql); //TODO: conectar y preparar query para ejecucion.
+            $sql->bindValue(1,$IDMATERIAL); //TODO:  numeros de parametros a buscar (1),valor($IDMATERIAL)
             $sql->execute();
             return $resultado=$sql->fetchAll();
         }

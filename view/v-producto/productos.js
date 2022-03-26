@@ -1,7 +1,7 @@
 var tabla;
 
 function init(){
-    //evitar guardado doble.
+    //TODO evitar guardado doble.
     $("#form_producto").on("submit", function(e)
     {
         guardaryeditar(e);
@@ -65,7 +65,7 @@ $(document).ready( function(){
 
         }
     )
-//guardar,editar(actualizar) producto.
+//TODO guardar,editar(actualizar) producto.
 function guardaryeditar(e){
     e.preventDefault();
     var formData = new FormData($("#form_producto")[0]);
@@ -93,20 +93,20 @@ function guardaryeditar(e){
 }
 
 
-//editar
+// TODO editar
 function editar(IDMATERIAL){
     console.log(IDMATERIAL);
-    //renombre modal
+    //TODO renombre modal
     $("#modal_titulo").html('Editar Registro');
 
-    //consulta de datos.
+    //TODO consulta de datos.
     $.post("../../controller/ctrl_productos.php?op=mostrar",{IDMATERIAL:IDMATERIAL},function(data){
         //convertir data a JSON con JS.
         data = JSON.parse(data);
         //
         // console.log(data);
         
-        //set datos
+        //TODO set datos
         $('#IDMATERIAL').val(data.IDMATERIAL);
         $('#DESCRIPCION').val(data.DESCRIPCION);
         $('#UNIDADMEDIDA').val(data.UNIDADMEDIDA);
@@ -117,11 +117,11 @@ function editar(IDMATERIAL){
     });
 
 
-    //mostrar
+    //TODO mostrar
     $("#modal_producto").modal('show');
 }
 
-//eliminar
+//TODO eliminar
 function eliminar(IDMATERIAL){
     //console.log(IDMATERIAL);
 
@@ -158,7 +158,7 @@ function eliminar(IDMATERIAL){
 $(document).on("click","#btn_nuevo",function(){
     
     $("#modal_titulo").html("Registrar Producto");
-    //reset fomulario
+    //TODO reset fomulario - Limpiar antes de uso del modal.
     $('#form_producto')[0].reset();
     $("#modal_producto").modal('show');
 })
