@@ -43,6 +43,14 @@
             <span class="menu-item-label">Clientes</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
+
+        <a href="../v-ventas/index.php" class="br-menu-link">
+                <div class="br-menu-item">
+                    <i class="menu-item-icon icon ion-person-stalker tx-22"></i>
+                    <span class="menu-item-label">Ventas</span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+            
         <a href="#" class="br-menu-link">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-calculator tx-22"></i>

@@ -31,25 +31,34 @@
                     <span class="menu-item-label">Inicio</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
+
             <a href="./view/v-producto/index.php" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon fa fa-fax tx-20"></i>
                     <span class="menu-item-label">Productos</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
+
             <a href="./view/v-cliente/index.php" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-person-stalker tx-22"></i>
                     <span class="menu-item-label">Clientes</span>
                 </div><!-- menu-item -->
             </a><!-- br-menu-link -->
+
+            <a href="./view/v-ventas/index.php" class="br-menu-link">
+                <div class="br-menu-item">
+                    <i class="menu-item-icon icon ion-person-stalker tx-22"></i>
+                    <span class="menu-item-label">Ventas</span>
+                </div><!-- menu-item -->
+            </a><!-- br-menu-link -->
+
             <a href="#" class="br-menu-link">
                 <div class="br-menu-item">
                     <i class="menu-item-icon icon ion-calculator tx-22"></i>
                     <span class="menu-item-label">Reportes</span>
                     <i class="menu-item-arrow fa fa-angle-down"></i>
                 </div><!-- menu-item -->
-
             </a><!-- br-menu-link -->
             <ul class="br-menu-sub nav flex-column" style="display: block;">
                 <li class="nav-item">
